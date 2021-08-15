@@ -1,21 +1,21 @@
-import { FC, MouseEventHandler, ReactChild, ReactChildren } from 'react';
-import { Flexbox, Icon } from 'components';
-import { IconProps } from 'components/Icon/Icon';
-import { useClassNames } from "hooks";
-import './Button.scss';
+import { FC, MouseEventHandler, ReactChild, ReactChildren } from 'react'
+import { Flexbox, Icon } from 'components'
+import { IconProps } from 'components/Icon/Icon'
+import { useClassNames } from 'hooks'
+import './Button.scss'
 
 interface ButtonProps {
-  ariaLabel: string;
-  className?: string;
-  content?: ReactChild | ReactChildren | string;
-  disabled?: boolean,
-  iconName?: string;
-  iconPosition?: 'start' | 'end';
-  iconSize?: IconProps['size'];
-  onClick?: MouseEventHandler;
-  size?: 's' | 'm' | 'l';
-  type?: 'button' | 'reset' | 'submit';
-  variant?: 'primary' | 'secondary' | 'danger' | 'inline';
+  ariaLabel: string
+  className?: string
+  content?: ReactChild | ReactChildren | string
+  disabled?: boolean
+  iconName?: string
+  iconPosition?: 'start' | 'end'
+  iconSize?: IconProps['size']
+  onClick?: MouseEventHandler
+  size?: 's' | 'm' | 'l'
+  type?: 'button' | 'reset' | 'submit'
+  variant?: 'primary' | 'secondary' | 'danger' | 'inline'
 }
 
 const Button: FC<ButtonProps> = ({
@@ -29,7 +29,7 @@ const Button: FC<ButtonProps> = ({
   onClick,
   size = 'm',
   type = 'button',
-  variant = 'primary'
+  variant = 'primary',
 }) => {
   const classNames = useClassNames({
     [className as string]: !!className,
@@ -37,7 +37,7 @@ const Button: FC<ButtonProps> = ({
     [`button--disabled`]: disabled,
     [`button--${size}`]: true,
     [`button--${variant}`]: true,
-  });
+  })
 
   return (
     <button
@@ -49,18 +49,18 @@ const Button: FC<ButtonProps> = ({
       type={type}
     >
       <Flexbox as="span" gap="s" justify="center">
-        {iconName && iconPosition === 'start' &&
+        {iconName && iconPosition === 'start' && (
           <Icon name={iconName} size={size} />
-        }
-        {(content || children) &&
+        )}
+        {(content || children) && (
           <span className="button__content">{content || children}</span>
-        }
-        {iconName && iconPosition === 'end' &&
+        )}
+        {iconName && iconPosition === 'end' && (
           <Icon name={iconName} size={size} />
-        }
+        )}
       </Flexbox>
     </button>
-  );
+  )
 }
 
 export default Button

@@ -1,25 +1,26 @@
-import { FC, useContext } from "react";
-import { Button, Divider, Flexbox, Heading, Icon } from "components";
-import { AppContext, SystemUserForm } from "features";
-import { useClassNames } from "hooks";
-import './SystemUserPanel.scss';
-import { FormProvider, useForm } from "react-hook-form";
-import { useEffect } from "react";
+import { FC, useContext } from 'react'
+import { Button, Divider, Flexbox, Heading, Icon } from 'components'
+import { AppContext, SystemUserForm } from 'features'
+import { useClassNames } from 'hooks'
+import './SystemUserPanel.scss'
+import { FormProvider, useForm } from 'react-hook-form'
+import { useEffect } from 'react'
 
 const SystemUserPanel: FC = () => {
-  const { sidePanelAction, setSidePanelAction, userUnderEdit } = useContext(AppContext);
+  const { sidePanelAction, setSidePanelAction, userUnderEdit } =
+    useContext(AppContext)
   const formContext = useForm({
     mode: 'onChange',
-    reValidateMode: 'onChange'
-  });
+    reValidateMode: 'onChange',
+  })
   const classNames = useClassNames({
     'system-user-panel': true,
-    'system-user-panel--open': !!sidePanelAction
-  });
+    'system-user-panel--open': !!sidePanelAction,
+  })
 
   useEffect(() => {
     formContext.reset(userUnderEdit || undefined)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userUnderEdit])
 
   return (
@@ -33,14 +34,12 @@ const SystemUserPanel: FC = () => {
             fullWidth
           >
             <Icon name="account_circle" size="xl" />
-            <Heading
-              as="h2"
-              className="system-user-panel__heading"
-            >
+            <Heading as="h2" className="system-user-panel__heading">
               {sidePanelAction === 'create-user'
                 ? 'New User'
-                : `Edit ${userUnderEdit?.displayname || userUnderEdit?.username}`
-              }
+                : `Edit ${
+                    userUnderEdit?.displayname || userUnderEdit?.username
+                  }`}
             </Heading>
             <Button
               ariaLabel="Cancel create new user"
@@ -58,7 +57,7 @@ const SystemUserPanel: FC = () => {
         </>
       )}
     </aside>
-  );
+  )
 }
 
-export default SystemUserPanel;
+export default SystemUserPanel

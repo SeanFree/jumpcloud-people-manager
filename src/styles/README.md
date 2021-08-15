@@ -46,7 +46,7 @@ For component stylesheets, I like to structure stylesheets by ordering things fr
 
   // Blocks (non-component specific / pseudoselectors)
   &:before {
-    content: "";
+    content: '';
   }
 
   .some-other-component {

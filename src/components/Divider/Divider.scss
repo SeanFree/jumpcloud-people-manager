@@ -3,8 +3,8 @@
   display: block;
   margin: $space-02 0;
   width: 100%;
-  
-  @include at-breakpoint("m") {
+
+  @include at-breakpoint('m') {
     margin: $space-03 0;
   }
 }

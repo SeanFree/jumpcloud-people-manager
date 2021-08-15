@@ -1,20 +1,21 @@
-import { useMemo } from 'react';
+import { useMemo } from 'react'
 
 interface ClassNameMap {
-  [className: string]: boolean;
+  [className: string]: boolean
 }
 
 const classNames = (map: ClassNameMap): string => {
-  return Object
-    .entries(map)
-    .reduce((classList, [className, enabled]) =>
-      classList.concat(enabled ? ` ${className}` : '')
-    , '')
+  return Object.entries(map)
+    .reduce(
+      (classList, [className, enabled]) =>
+        classList.concat(enabled ? ` ${className}` : ''),
+      ''
+    )
     .trim()
-};
+}
 
 const useClassNames = (map: ClassNameMap) => {
-  return useMemo(() => classNames(map), [map]);
-};
+  return useMemo(() => classNames(map), [map])
+}
 
-export default useClassNames;
+export default useClassNames

@@ -1,20 +1,20 @@
-import { FC } from 'react';
-import { Button, Flexbox, Heading, TextInput } from "components";
-import SystemUserPut from "models/SystemUserPut.interface";
-import SystemUser from 'models/SystemUser.interface';
+import { FC } from 'react'
+import { Button, Flexbox, Heading, TextInput } from 'components'
+import SystemUserPut from 'models/SystemUserPut.interface'
+import SystemUser from 'models/SystemUser.interface'
 
 interface PersonalInformationFieldsProps {
-  disabled: boolean;
-  isEditForm?: boolean;
-  onDelete?: Function;
-  userUnderEdit?: SystemUserPut | null;
+  disabled: boolean
+  isEditForm?: boolean
+  onDelete?: Function
+  userUnderEdit?: SystemUserPut | null
 }
 
 const PersonalInformationFields: FC<PersonalInformationFieldsProps> = ({
   disabled,
   isEditForm,
   onDelete,
-  userUnderEdit
+  userUnderEdit,
 }) => {
   return (
     <>
@@ -25,12 +25,7 @@ const PersonalInformationFields: FC<PersonalInformationFieldsProps> = ({
           content="Personal Information"
         />
       </header>
-      <Flexbox
-        align="start"
-        as="fieldset"
-        fullWidth
-        gap="m"
-      >
+      <Flexbox align="start" as="fieldset" fullWidth gap="m">
         <TextInput<SystemUser>
           autoFocus
           disabled={disabled}
@@ -51,12 +46,7 @@ const PersonalInformationFields: FC<PersonalInformationFieldsProps> = ({
           label="Last Name"
         />
       </Flexbox>
-      <Flexbox
-        align="start"
-        as="fieldset"
-        fullWidth
-        gap="m"
-      >
+      <Flexbox align="start" as="fieldset" fullWidth gap="m">
         <TextInput<SystemUser>
           disabled={disabled}
           id="username"
@@ -79,7 +69,7 @@ const PersonalInformationFields: FC<PersonalInformationFieldsProps> = ({
         />
       </Flexbox>
     </>
-  );
-};
+  )
+}
 
-export default PersonalInformationFields;
+export default PersonalInformationFields

@@ -1,18 +1,18 @@
-import { ElementType, FC, ReactChild, ReactChildren } from "react";
-import { Divider, Flexbox, Heading, Icon } from 'components';
-import { IconProps } from "components/Icon/Icon";
-import { useClassNames } from "hooks";
-import './Tile.scss';
+import { ElementType, FC, ReactChild, ReactChildren } from 'react'
+import { Divider, Flexbox, Heading, Icon } from 'components'
+import { IconProps } from 'components/Icon/Icon'
+import { useClassNames } from 'hooks'
+import './Tile.scss'
 
 interface TileProps {
-  bodyContent: ReactChild | ReactChildren;
-  className?: string;
-  footerContent?: ReactChild | ReactChildren;
-  fullWidthBody?: boolean;
-  headerAction?: ReactChild;
-  headerIconProps?: IconProps;
-  heading: string;
-  as?: ElementType;
+  bodyContent: ReactChild | ReactChildren
+  className?: string
+  footerContent?: ReactChild | ReactChildren
+  fullWidthBody?: boolean
+  headerAction?: ReactChild
+  headerIconProps?: IconProps
+  heading: string
+  as?: ElementType
 }
 
 const Tile: FC<TileProps> = ({
@@ -28,11 +28,11 @@ const Tile: FC<TileProps> = ({
   const classNames = useClassNames({
     [className as string]: !!className,
     tile: true,
-  });
+  })
   const bodyClassNames = useClassNames({
     'custom-scrollbar': true,
-    'tile__body': true,
-    'tile__body--full-width': fullWidthBody
+    tile__body: true,
+    'tile__body--full-width': fullWidthBody,
   })
 
   return (
@@ -44,28 +44,18 @@ const Tile: FC<TileProps> = ({
       gap="m"
       as={Tag}
     >
-      <Flexbox
-        as="header"
-        className="tile__header"
-        fullWidth
-        gap="m"
-      >
+      <Flexbox as="header" className="tile__header" fullWidth gap="m">
         {headerIconProps && <Icon {...headerIconProps} />}
-        <Heading
-          as="h2"
-          className="tile__heading"
-          content={heading}
-          nowrap
-        />
+        <Heading as="h2" className="tile__heading" content={heading} nowrap />
         {headerAction}
       </Flexbox>
       <Divider />
       <div className={bodyClassNames}>{bodyContent}</div>
-      {footerContent &&
+      {footerContent && (
         <footer className="tile__footer">{footerContent}</footer>
-      }
+      )}
     </Flexbox>
-  );
-};
+  )
+}
 
-export default Tile;
+export default Tile

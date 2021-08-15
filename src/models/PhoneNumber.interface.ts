@@ -1,5 +1,5 @@
 export default interface PhoneNumber {
-  id: string;
-  number: string;
-  type: string;
+  id: string
+  number: string
+  type: string
 }

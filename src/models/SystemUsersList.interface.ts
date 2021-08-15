@@ -1,6 +1,6 @@
-import SystemUser from './SystemUser.interface';
+import SystemUser from './SystemUser.interface'
 
 export default interface SystemUsersList {
-  results: SystemUser[];
-  totalCount: number;
+  results: SystemUser[]
+  totalCount: number
 }

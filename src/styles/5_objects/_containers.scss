@@ -5,7 +5,7 @@
   padding: $padding-horizontal-04;
   width: 100%;
 
-  @include at-breakpoint("m") {
+  @include at-breakpoint('m') {
     padding: $padding-horizontal-05;
   }
 }

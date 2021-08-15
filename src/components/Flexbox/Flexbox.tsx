@@ -1,16 +1,16 @@
-import { ElementType, FC } from "react";
-import { useClassNames } from "hooks";
-import './Flexbox.scss';
+import { ElementType, FC } from 'react'
+import { useClassNames } from 'hooks'
+import './Flexbox.scss'
 
 interface FlexboxProps {
-  align?: 'baseline' | 'center' | 'end' | 'start' | 'stretch';
-  as?: ElementType;
-  className?: string;
-  direction?: 'column' | 'row';
-  fullWidth?: boolean;
-  gap?: 'xs' | 's' | 'm' | 'l';
-  nowrap?: boolean;
-  justify?: 'around' | 'between' | 'center' | 'end' | 'evenly' | 'start',
+  align?: 'baseline' | 'center' | 'end' | 'start' | 'stretch'
+  as?: ElementType
+  className?: string
+  direction?: 'column' | 'row'
+  fullWidth?: boolean
+  gap?: 'xs' | 's' | 'm' | 'l'
+  nowrap?: boolean
+  justify?: 'around' | 'between' | 'center' | 'end' | 'evenly' | 'start'
 }
 
 const Flexbox: FC<FlexboxProps> = ({
@@ -32,12 +32,10 @@ const Flexbox: FC<FlexboxProps> = ({
     'flexbox--full-width': fullWidth,
     [`flexbox--gap-${gap}`]: !!gap,
     'flexbox--nowrap': nowrap,
-    [`flexbox--justify-${justify}`]: true
-  });
+    [`flexbox--justify-${justify}`]: true,
+  })
 
-  return (
-    <Tag className={classNames}>{children}</Tag>
-  );
-};
+  return <Tag className={classNames}>{children}</Tag>
+}
 
-export default Flexbox;
+export default Flexbox

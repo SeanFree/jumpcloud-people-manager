@@ -3,10 +3,10 @@ import {
   AppHeader,
   AppNotification,
   SystemUserPanel,
-  UsersTile
-} from 'features';
+  UsersTile,
+} from 'features'
 
-import './styles/App.scss';
+import './styles/App.scss'
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
       <AppNotification />
       <SystemUserPanel />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

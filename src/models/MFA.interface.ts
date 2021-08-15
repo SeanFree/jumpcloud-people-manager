@@ -1,5 +1,5 @@
 export default interface MFA {
-  configured: boolean;
-  exclusion: boolean;
-  exclusionUtil: string;
+  configured: boolean
+  exclusion: boolean
+  exclusionUtil: string
 }

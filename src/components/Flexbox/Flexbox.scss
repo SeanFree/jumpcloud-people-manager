@@ -4,12 +4,12 @@
   &--full-width {
     width: 100%;
   }
-  
+
   &--row {
     flex-direction: row;
     flex-wrap: wrap;
 
-    @include at-breakpoint("s") {
+    @include at-breakpoint('s') {
       flex-wrap: nowrap;
     }
 
@@ -20,11 +20,11 @@
     &.flexbox--gap-s > * {
       margin: $margin-inline-02;
     }
-  
+
     &.flexbox--gap-m > * {
       margin: $margin-inline-03;
     }
-  
+
     &.flexbox--gap-l > * {
       margin: $margin-inline-04;
     }
@@ -44,11 +44,11 @@
     &.flexbox--gap-s > * {
       margin: $margin-stack-02;
     }
-  
+
     &.flexbox--gap-m > * {
       margin: $margin-stack-03;
     }
-  
+
     &.flexbox--gap-l > * {
       margin: $margin-stack-04;
     }

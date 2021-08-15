@@ -5,11 +5,11 @@
 
     &--required:after,
     &--required-error:after {
-      content: " *";
+      content: ' *';
       white-space: pre;
       display: inline-block;
     }
-    
+
     &--required-error:after {
       color: $red-700;
     }

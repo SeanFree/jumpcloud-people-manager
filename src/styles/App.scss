@@ -1,8 +1,4 @@
-@import
-  "./3_generic/",
-  "./4_elements/",
-  "./5_objects/",
-  "./6_utilities/";
+@import './3_generic/', './4_elements/', './5_objects/', './6_utilities/';
 
 .app-root {
   display: flex;

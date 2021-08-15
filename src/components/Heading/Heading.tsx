@@ -1,13 +1,13 @@
-import { ReactChild, ReactChildren } from "react";
-import { useClassNames } from "hooks";
-import { FC } from "react";
-import './Heading.scss';
+import { ReactChild, ReactChildren } from 'react'
+import { useClassNames } from 'hooks'
+import { FC } from 'react'
+import './Heading.scss'
 
 interface HeadingProps {
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  className?: string;
-  content?: ReactChildren | ReactChild | string;
-  nowrap?: boolean;
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  className?: string
+  content?: ReactChildren | ReactChild | string
+  nowrap?: boolean
 }
 
 const Heading: FC<HeadingProps> = ({
@@ -21,12 +21,10 @@ const Heading: FC<HeadingProps> = ({
     [className as string]: !!className,
     heading: true,
     [`heading--${Tag}`]: true,
-    'heading--nowrap': nowrap
-  });
+    'heading--nowrap': nowrap,
+  })
 
-  return (
-    <Tag className={classNames}>{content || children}</Tag>
-  );
-};
+  return <Tag className={classNames}>{content || children}</Tag>
+}
 
-export default Heading;
+export default Heading

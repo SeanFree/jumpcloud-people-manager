@@ -1,14 +1,14 @@
-import { FC, ReactChild,ReactChildren } from 'react';
-import { useClassNames } from 'hooks';
-import './Typography.scss';
+import { FC, ReactChild, ReactChildren } from 'react'
+import { useClassNames } from 'hooks'
+import './Typography.scss'
 
 interface TypographyProps {
-  className?: string;
-  content?: ReactChildren | ReactChild | string;
-  as?: 'p' | 'span';
-  size?: 's' | 'm' | 'l';
-  textAlign?: 'left' | 'center' | 'right';
-  weight?: 'light' | 'normal' | 'semibold' | 'bold';
+  className?: string
+  content?: ReactChildren | ReactChild | string
+  as?: 'p' | 'span'
+  size?: 's' | 'm' | 'l'
+  textAlign?: 'left' | 'center' | 'right'
+  weight?: 'light' | 'normal' | 'semibold' | 'bold'
 }
 
 const Typography: FC<TypographyProps> = ({
@@ -18,19 +18,17 @@ const Typography: FC<TypographyProps> = ({
   content,
   size = 'm',
   weight = 'normal',
-  textAlign = 'left'
+  textAlign = 'left',
 }) => {
   const classList = useClassNames({
     [className as string]: !!className,
     typography: true,
     [`typography--${size}`]: true,
     [`typography--${weight}`]: true,
-    [`typography--align-${textAlign}`]: true
-  });
+    [`typography--align-${textAlign}`]: true,
+  })
 
-  return (
-    <Tag className={classList}>{content || children}</Tag>
-  );
-};
+  return <Tag className={classList}>{content || children}</Tag>
+}
 
-export default Typography;
+export default Typography

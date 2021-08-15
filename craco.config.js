@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   style: {
@@ -6,13 +6,13 @@ module.exports = {
       mode: 'extends',
       loaderOptions: (sassLoaderOptions) => ({
         ...sassLoaderOptions,
-        additionalData: `@import "styles/global.scss";`
-      })
-    }
+        additionalData: `@import "styles/global.scss";`,
+      }),
+    },
   },
   webpack: {
     alias: {
-      '@': path.resolve('./src')
-    }
-  }
-};
+      '@': path.resolve('./src'),
+    },
+  },
+}

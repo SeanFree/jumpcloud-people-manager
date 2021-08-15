@@ -1,22 +1,22 @@
-import { ReactElement } from 'react';
-import { FieldName, Path } from 'react-hook-form';
-import { FormField } from 'components';
-import { useClassNames } from 'hooks';
-import './TextInput.scss';
+import { ReactElement } from 'react'
+import { FieldName, Path } from 'react-hook-form'
+import { FormField } from 'components'
+import { useClassNames } from 'hooks'
+import './TextInput.scss'
 
 interface TextInputProps {
-  ariaLabel?: string;
-  autoFocus?: boolean;
-  className?: string;
-  defaultValue?: string;
-  disabled?: boolean;
-  id: string;
-  label: string;
-  name: FieldName<any>;
-  maxLength?: number;
-  minLength?: number;
-  pattern?: RegExp;
-  required?: boolean;
+  ariaLabel?: string
+  autoFocus?: boolean
+  className?: string
+  defaultValue?: string
+  disabled?: boolean
+  id: string
+  label: string
+  name: FieldName<any>
+  maxLength?: number
+  minLength?: number
+  pattern?: RegExp
+  required?: boolean
 }
 
 const TextInput = <FormDataType,>({
@@ -31,13 +31,13 @@ const TextInput = <FormDataType,>({
   minLength = 0,
   name,
   pattern,
-  required = false
+  required = false,
 }: TextInputProps): ReactElement => {
   const classNames = useClassNames({
     [className as string]: !!className,
     'text-input': true,
     'text-input--disabled': !!disabled,
-  });
+  })
 
   return (
     <FormField
@@ -49,26 +49,25 @@ const TextInput = <FormDataType,>({
       validationRules={{
         maxLength: {
           message: `${label} should not exceed ${maxLength} characters.`,
-          value: maxLength
+          value: maxLength,
         },
         minLength: {
           message: `${label} should be at least ${minLength} characters.`,
-          value: minLength
+          value: minLength,
         },
         required: {
           message: `${label} is required.`,
-          value: required
+          value: required,
         },
         ...(pattern
           ? {
               message: `Value entered for ${label} is invalid`,
-              value: pattern
+              value: pattern,
             }
-          : {}
-        )
+          : {}),
       }}
     >
-      {(fieldProps, hasError) =>
+      {(fieldProps, hasError) => (
         <input
           {...fieldProps}
           aria-disabled={disabled}
@@ -85,9 +84,9 @@ const TextInput = <FormDataType,>({
           required={required}
           value={defaultValue}
         />
-      }
+      )}
     </FormField>
-  );
-};
+  )
+}
 
-export default TextInput;
+export default TextInput

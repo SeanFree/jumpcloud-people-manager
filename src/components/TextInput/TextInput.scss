@@ -1,7 +1,7 @@
 .text-input {
   width: 100%;
 
-  @include at-breakpoint("m") {
+  @include at-breakpoint('m') {
     max-width: 220px;
   }
 
@@ -16,7 +16,7 @@
       outline-width: 2px;
     }
 
-    &[aria-invalid="true"] {
+    &[aria-invalid='true'] {
       border-color: $red-700;
     }
 

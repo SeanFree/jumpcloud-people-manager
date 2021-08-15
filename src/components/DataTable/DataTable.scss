@@ -8,7 +8,7 @@
   &__heading {
     padding: $space-00 $space-04;
 
-    @include at-breakpoint("m") {
+    @include at-breakpoint('m') {
       padding: $space-01 $space-05;
     }
   }
@@ -28,7 +28,7 @@
 
     &--clickable:hover,
     &--tabbable:focus {
-      background-color: $blue-50; 
+      background-color: $blue-50;
       z-index: 1;
     }
 
@@ -39,7 +39,7 @@
     &--clickable {
       position: relative;
       transition: box-shadow 0.2s, background-color 0.2s;
-  
+
       &:hover {
         box-shadow: $box-shadow-01;
         cursor: pointer;
@@ -54,7 +54,7 @@
   &__cell {
     padding: $space-02 $space-04;
 
-    @include at-breakpoint("m") {
+    @include at-breakpoint('m') {
       padding: $space-03 $space-05;
     }
   }

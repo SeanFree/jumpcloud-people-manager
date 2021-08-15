@@ -3,7 +3,7 @@
   box-shadow: $box-shadow-01;
   padding: $padding-vertical-03;
 
-  @include at-breakpoint("m") {
+  @include at-breakpoint('m') {
     padding: $padding-vertical-04;
   }
 

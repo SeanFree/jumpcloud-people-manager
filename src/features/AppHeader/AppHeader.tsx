@@ -1,8 +1,8 @@
-import { FC } from 'react';
-import { ReactComponent as JumpcloudLogo } from 'assets/jumpcloud-logo.svg';
-import { Flexbox, Heading } from 'components';
+import { FC } from 'react'
+import { ReactComponent as JumpcloudLogo } from 'assets/jumpcloud-logo.svg'
+import { Flexbox, Heading } from 'components'
 
-import './AppHeader.scss';
+import './AppHeader.scss'
 
 const AppHeader: FC = () => {
   return (
@@ -24,7 +24,7 @@ const AppHeader: FC = () => {
         />
       </Flexbox>
     </header>
-  );
-};
+  )
+}
 
-export default AppHeader;
+export default AppHeader

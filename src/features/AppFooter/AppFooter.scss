@@ -1,5 +1,5 @@
 .app-footer {
-  background-color: #0D47A1;
+  background-color: #0d47a1;
   color: $white;
   margin-top: auto;
   padding: $space-05 0 2 * $space-05;
@@ -9,7 +9,7 @@
     flex-basis: 100%;
     margin-top: $space-05;
 
-    @include at-breakpoint("s") {
+    @include at-breakpoint('s') {
       margin-top: 0;
     }
 
@@ -21,7 +21,6 @@
   &__heading {
     color: $white;
   }
-
 
   &__list {
     list-style: none;

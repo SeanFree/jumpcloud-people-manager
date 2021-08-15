@@ -1,20 +1,20 @@
-import { FC } from 'react';
-import { Button, Flexbox, Heading, TextInput } from "components";
-import SystemUser from "models/SystemUser.interface";
-import SystemUserPut from "models/SystemUserPut.interface";
+import { FC } from 'react'
+import { Button, Flexbox, Heading, TextInput } from 'components'
+import SystemUser from 'models/SystemUser.interface'
+import SystemUserPut from 'models/SystemUserPut.interface'
 
 interface UserInformationFieldsProps {
-  disabled: boolean;
-  isEditForm: boolean;
-  onDelete: Function;
-  userUnderEdit?: SystemUserPut | null;
+  disabled: boolean
+  isEditForm: boolean
+  onDelete: Function
+  userUnderEdit?: SystemUserPut | null
 }
 
 const UserInformationFields: FC<UserInformationFieldsProps> = ({
   disabled,
   isEditForm,
   onDelete,
-  userUnderEdit
+  userUnderEdit,
 }) => {
   return (
     <>
@@ -29,9 +29,11 @@ const UserInformationFields: FC<UserInformationFieldsProps> = ({
           className="system-user-form__heading"
           content="User Information"
         />
-        {isEditForm &&
+        {isEditForm && (
           <Button
-            ariaLabel={`Delete ${userUnderEdit?.displayname || userUnderEdit?.username}`}
+            ariaLabel={`Delete ${
+              userUnderEdit?.displayname || userUnderEdit?.username
+            }`}
             className="system-user-form__btn-delete-user"
             content="Delete user"
             iconName="person_remove"
@@ -39,14 +41,9 @@ const UserInformationFields: FC<UserInformationFieldsProps> = ({
             size="s"
             variant="danger"
           />
-        }
+        )}
       </Flexbox>
-      <Flexbox
-        align="start"
-        as="fieldset"
-        fullWidth
-        gap="m"
-      >
+      <Flexbox align="start" as="fieldset" fullWidth gap="m">
         <TextInput<SystemUser>
           autoFocus
           disabled={disabled}
@@ -67,12 +64,7 @@ const UserInformationFields: FC<UserInformationFieldsProps> = ({
           label="Last Name"
         />
       </Flexbox>
-      <Flexbox
-        align="start"
-        as="fieldset"
-        fullWidth
-        gap="m"
-      >
+      <Flexbox align="start" as="fieldset" fullWidth gap="m">
         <TextInput<SystemUser>
           disabled={disabled}
           id="username"
@@ -95,7 +87,7 @@ const UserInformationFields: FC<UserInformationFieldsProps> = ({
         />
       </Flexbox>
     </>
-  );
-};
+  )
+}
 
-export default UserInformationFields;
+export default UserInformationFields

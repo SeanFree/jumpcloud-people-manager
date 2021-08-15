@@ -10,7 +10,7 @@
   width: 100vw;
   z-index: 4;
 
-  @include at-breakpoint("m") {
+  @include at-breakpoint('m') {
     max-width: $breakpoint-2;
     padding: $padding-inset-05;
     width: 80vw;
@@ -32,7 +32,7 @@
   // Background overlay
   &:before {
     background-color: transparentize($neutral-900, 0.75);
-    content: "";
+    content: '';
     display: block;
     height: 100vh;
     left: 0;
@@ -61,12 +61,12 @@
     margin-right: 0;
     max-width: unset;
 
-    @include at-breakpoint("s") {
+    @include at-breakpoint('s') {
       margin-right: $space-04;
     }
 
     &:last-child {
-      @include at-breakpoint("s") {
+      @include at-breakpoint('s') {
         margin-right: 0;
       }
     }

@@ -2,7 +2,7 @@ enum DispatchStatus {
   IDLE = 'idle',
   FAILED = 'failed',
   PENDING = 'pending',
-  SUCCESS = 'success'
+  SUCCESS = 'success',
 }
 
-export default DispatchStatus;
+export default DispatchStatus

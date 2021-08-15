@@ -1,6 +1,6 @@
 enum UserState {
   ACTIVATED = 'ACTIVATED',
-  SUSPENDED = 'SUSPENDED'
+  SUSPENDED = 'SUSPENDED',
 }
 
-export default UserState;
+export default UserState
