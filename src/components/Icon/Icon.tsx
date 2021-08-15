@@ -1,5 +1,5 @@
+import React, { FC, MouseEventHandler } from 'react'
 import { useClassNames } from 'hooks'
-import { FC, MouseEventHandler } from 'react'
 import './Icon.scss'
 
 export interface IconProps {
@@ -16,7 +16,7 @@ const Icon: FC<IconProps> = ({
   onClick,
   size = 'm',
   type = 'neutral',
-}) => {
+}: IconProps) => {
   const classNames = useClassNames({
     [className as string]: !!className,
     'material-icons': true,

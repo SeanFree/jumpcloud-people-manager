@@ -1,4 +1,4 @@
-import { ElementType, FC, ReactChild, ReactChildren } from 'react'
+import React, { ElementType, FC, ReactChild, ReactChildren } from 'react'
 import { Divider, Flexbox, Heading, Icon } from 'components'
 import { IconProps } from 'components/Icon/Icon'
 import { useClassNames } from 'hooks'
@@ -24,7 +24,7 @@ const Tile: FC<TileProps> = ({
   headerAction,
   headerIconProps,
   heading,
-}) => {
+}: TileProps) => {
   const classNames = useClassNames({
     [className as string]: !!className,
     tile: true,

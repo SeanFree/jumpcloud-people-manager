@@ -1,6 +1,6 @@
-import { FC, useEffect, useContext } from 'react'
-import { useFormContext, useWatch } from 'react-hook-form'
-import { Button, Divider, Flexbox, Heading, TextInput } from 'components'
+import React, { FC, useEffect, useContext } from 'react'
+import { useFormContext, UseFormHandleSubmit, useWatch } from 'react-hook-form'
+import { Button, Divider, Flexbox } from 'components'
 import { AppContext } from 'features'
 import DispatchStatus from 'models/DispatchStatus.enum'
 import SystemUserPost from 'models/SystemUserPost.interface'
@@ -20,10 +20,12 @@ import './SystemUserForm.scss'
 import UserInformationFields from './UserInformationFields'
 
 interface SystemUserFormProps {
-  handleSubmit: Function
+  handleSubmit: UseFormHandleSubmit<any>
 }
 
-const SystemUserForm: FC<SystemUserFormProps> = ({ handleSubmit }) => {
+const SystemUserForm: FC<SystemUserFormProps> = ({
+  handleSubmit,
+}: SystemUserFormProps) => {
   const dispatch = useAppDispatch()
   const {
     setNotificationMessage,
@@ -95,7 +97,6 @@ const SystemUserForm: FC<SystemUserFormProps> = ({ handleSubmit }) => {
         type,
       })
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [createUserStatus])
 
   useEffect(() => {
@@ -107,7 +108,6 @@ const SystemUserForm: FC<SystemUserFormProps> = ({ handleSubmit }) => {
         type: 'success',
       })
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [updateUserStatus])
 
   useEffect(() => {
@@ -119,11 +119,10 @@ const SystemUserForm: FC<SystemUserFormProps> = ({ handleSubmit }) => {
         type: 'success',
       })
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [deleteUserStatus])
 
   useEffect(() => {
-    return () => setUserUnderEdit(undefined)
+    return () => setUserUnderEdit(null)
   }, [setUserUnderEdit])
 
   useEffect(() => {

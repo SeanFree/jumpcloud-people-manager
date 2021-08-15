@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react'
 import {
   AppFooter,
   AppHeader,
@@ -8,7 +9,7 @@ import {
 
 import './styles/App.scss'
 
-function App() {
+function App(): ReactElement {
   return (
     <>
       <AppHeader />

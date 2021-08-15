@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { FC, useContext, useEffect, useRef, useState } from 'react'
+import React, { FC, useContext, useEffect, useRef, useState } from 'react'
 import { Button, Flexbox, Heading, Icon, Typography } from 'components'
 import { AppContext } from 'features'
 import { useClassNames } from 'hooks'
@@ -29,7 +28,7 @@ const AppNotification: FC = () => {
     el?.current?.addEventListener('transitionend', onTransitionEnd)
   }, [])
 
-  const close = (immediate: boolean = false) => {
+  const close = (immediate = false) => {
     if (immediate) {
       setIsVisible(false)
       handleTransition()

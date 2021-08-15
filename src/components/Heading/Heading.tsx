@@ -1,4 +1,4 @@
-import { ReactChild, ReactChildren } from 'react'
+import React, { PropsWithChildren, ReactChild, ReactChildren } from 'react'
 import { useClassNames } from 'hooks'
 import { FC } from 'react'
 import './Heading.scss'
@@ -16,7 +16,7 @@ const Heading: FC<HeadingProps> = ({
   className,
   content,
   nowrap = false,
-}) => {
+}: PropsWithChildren<HeadingProps>) => {
   const classNames = useClassNames({
     [className as string]: !!className,
     heading: true,

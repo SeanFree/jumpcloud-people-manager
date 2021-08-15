@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect } from 'react'
+import React, { FC, PropsWithChildren, ReactNode, useEffect } from 'react'
 import {
   Path,
   ValidationRule,
@@ -27,7 +27,7 @@ const FormField: FC<FormFieldProps> = ({
   name,
   required = false,
   validationRules,
-}) => {
+}: PropsWithChildren<FormFieldProps>) => {
   const {
     formState: { errors },
     register,

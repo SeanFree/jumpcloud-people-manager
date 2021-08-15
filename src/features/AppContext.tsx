@@ -1,32 +1,38 @@
-import { createContext, FC, useState } from 'react'
-import SystemUser from 'models/SystemUser.interface'
+import React, {
+  createContext,
+  Dispatch,
+  FC,
+  PropsWithChildren,
+  useState,
+} from 'react'
 import { UserStatusKey } from 'store/users/users.slice'
+import SystemUserPut from 'models/SystemUserPut.interface'
 
 export interface NotificationMessage {
   content: string
   statusKey: UserStatusKey
-  type: 'error' | 'success'
+  type: string
 }
 
 interface AppContextValue {
   notificationMessage?: NotificationMessage | null
-  setNotificationMessage: Function
+  setNotificationMessage: Dispatch<NotificationMessage | null>
   sidePanelAction: 'create-user' | 'edit-user' | ''
-  setSidePanelAction: Function
-  userUnderEdit: SystemUser | null
-  setUserUnderEdit: Function
+  setSidePanelAction: Dispatch<'create-user' | 'edit-user' | ''>
+  userUnderEdit: SystemUserPut | null
+  setUserUnderEdit: Dispatch<SystemUserPut | null>
 }
 
 export const AppContext = createContext<AppContextValue>({
   notificationMessage: null,
-  setNotificationMessage: () => {},
+  setNotificationMessage: () => null,
   sidePanelAction: '',
-  setSidePanelAction: () => {},
+  setSidePanelAction: () => null,
   userUnderEdit: null,
-  setUserUnderEdit: () => {},
+  setUserUnderEdit: () => null,
 })
 
-export const AppProvider: FC = ({ children }) => {
+export const AppProvider: FC<any> = ({ children }: PropsWithChildren<any>) => {
   const [notificationMessage, setNotificationMessage] =
     useState<AppContextValue['notificationMessage']>()
   const [sidePanelAction, setSidePanelAction] =

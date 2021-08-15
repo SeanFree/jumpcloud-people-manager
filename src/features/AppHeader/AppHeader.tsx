@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import { ReactComponent as JumpcloudLogo } from 'assets/jumpcloud-logo.svg'
 import { Flexbox, Heading } from 'components'
 

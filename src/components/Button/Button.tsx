@@ -1,4 +1,10 @@
-import { FC, MouseEventHandler, ReactChild, ReactChildren } from 'react'
+import React, {
+  FC,
+  MouseEventHandler,
+  PropsWithChildren,
+  ReactChild,
+  ReactChildren,
+} from 'react'
 import { Flexbox, Icon } from 'components'
 import { IconProps } from 'components/Icon/Icon'
 import { useClassNames } from 'hooks'
@@ -30,7 +36,7 @@ const Button: FC<ButtonProps> = ({
   size = 'm',
   type = 'button',
   variant = 'primary',
-}) => {
+}: PropsWithChildren<ButtonProps>) => {
   const classNames = useClassNames({
     [className as string]: !!className,
     button: true,

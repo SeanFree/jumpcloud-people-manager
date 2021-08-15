@@ -14,7 +14,7 @@ const classNames = (map: ClassNameMap): string => {
     .trim()
 }
 
-const useClassNames = (map: ClassNameMap) => {
+const useClassNames = (map: ClassNameMap): string => {
   return useMemo(() => classNames(map), [map])
 }
 

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import { Button, Flexbox, Heading, TextInput } from 'components'
 import SystemUser from 'models/SystemUser.interface'
 import SystemUserPut from 'models/SystemUserPut.interface'
@@ -6,7 +6,7 @@ import SystemUserPut from 'models/SystemUserPut.interface'
 interface UserInformationFieldsProps {
   disabled: boolean
   isEditForm: boolean
-  onDelete: Function
+  onDelete: () => any
   userUnderEdit?: SystemUserPut | null
 }
 
@@ -15,7 +15,7 @@ const UserInformationFields: FC<UserInformationFieldsProps> = ({
   isEditForm,
   onDelete,
   userUnderEdit,
-}) => {
+}: UserInformationFieldsProps) => {
   return (
     <>
       <Flexbox

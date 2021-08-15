@@ -1,4 +1,4 @@
-import { FC, ReactChild, ReactChildren } from 'react'
+import React, { FC, PropsWithChildren, ReactChild, ReactChildren } from 'react'
 import { useClassNames } from 'hooks'
 import './Typography.scss'
 
@@ -19,7 +19,7 @@ const Typography: FC<TypographyProps> = ({
   size = 'm',
   weight = 'normal',
   textAlign = 'left',
-}) => {
+}: PropsWithChildren<TypographyProps>) => {
   const classList = useClassNames({
     [className as string]: !!className,
     typography: true,

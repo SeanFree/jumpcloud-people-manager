@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect, useState } from 'react'
+import React, { FC, useContext, useEffect, useState } from 'react'
 import { Button, DataTable, Flexbox, Icon, Tile, Typography } from 'components'
 import { DataTableColumn } from 'components/DataTable/DataTable'
 import SystemUser from 'models/SystemUser.interface'
@@ -72,7 +72,6 @@ const UsersTile: FC = () => {
       })
       setFetchError(true)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [getUsersStatus])
 
   return (

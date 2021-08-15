@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react'
+import React, { FC, useContext } from 'react'
 import { Button, Divider, Flexbox, Heading, Icon } from 'components'
 import { AppContext, SystemUserForm } from 'features'
 import { useClassNames } from 'hooks'
@@ -20,7 +20,6 @@ const SystemUserPanel: FC = () => {
 
   useEffect(() => {
     formContext.reset(userUnderEdit || undefined)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userUnderEdit])
 
   return (

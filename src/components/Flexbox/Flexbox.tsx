@@ -1,4 +1,4 @@
-import { ElementType, FC } from 'react'
+import React, { ElementType, FC, PropsWithChildren } from 'react'
 import { useClassNames } from 'hooks'
 import './Flexbox.scss'
 
@@ -23,7 +23,7 @@ const Flexbox: FC<FlexboxProps> = ({
   nowrap = false,
   gap,
   justify = 'start',
-}) => {
+}: PropsWithChildren<FlexboxProps>) => {
   const classNames = useClassNames({
     [className as string]: !!className,
     flexbox: true,

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import { Divider, Flexbox, Heading, Typography } from 'components'
 import './AppFooter.scss'
 
