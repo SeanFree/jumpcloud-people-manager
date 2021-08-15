@@ -1,0 +1,52 @@
+.heading {
+  color: $neutral-800;
+  font-weight: 600;
+
+  &--h1 {
+    font-size: $font-size-04;
+
+    @include at-breakpoint("m") {
+      font-size: $font-size-05; 
+    }
+  }
+
+  &--h2 {
+    font-size: $font-size-03;
+
+    @include at-breakpoint("m") {
+      font-size: $font-size-04;
+    }
+  }
+
+  &--h3 {
+    font-size: $font-size-02;
+
+    @include at-breakpoint("m") {
+      font-size: $font-size-03;
+    }
+  }
+
+  &--h4 {
+    font-size: $font-size-01;
+
+    @include at-breakpoint("m") {
+      font-size: $font-size-02;
+    }
+  }
+
+  &--h5 {
+    font-size: $font-size-00;
+
+    @include at-breakpoint("m") {
+      font-size: $font-size-01;
+    }
+  }
+
+  &--h6 {
+    font-size: $font-size-00;
+  }
+
+  &--nowrap {
+    white-space: nowrap;
+  }
+}

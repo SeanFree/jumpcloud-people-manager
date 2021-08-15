@@ -1,0 +1,40 @@
+.app-footer {
+  background-color: #0D47A1;
+  color: $white;
+  margin-top: auto;
+  padding: $space-05 0 2 * $space-05;
+  width: 100%;
+
+  & &__list-container {
+    flex-basis: 100%;
+    margin-top: $space-05;
+
+    @include at-breakpoint("s") {
+      margin-top: 0;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__heading {
+    color: $white;
+  }
+
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      color: $blue-100;
+    }
+  }
+}

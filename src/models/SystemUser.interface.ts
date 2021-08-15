@@ -30,6 +30,7 @@ export default interface SystemUser {
   external_source_type: string;
   externally_managed: boolean;
   firstname: string;
+  id: string;
   jobTitle: string;
   lastname: string;
   ldap_binding_user: boolean;

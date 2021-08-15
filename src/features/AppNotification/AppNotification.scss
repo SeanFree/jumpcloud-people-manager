@@ -1,0 +1,31 @@
+.app-notification {
+  background-color: $white;
+  box-shadow: $box-shadow-01;
+  border-radius: 0 0 4px 4px;
+  border-top: 2px solid;
+  right: $space-04;
+  padding: $space-04 $space-05;
+  opacity: 0;
+  position: fixed;
+  top: 12vh;
+  transform: translateX(calc(100% + #{$space-04}));
+  transition: transform 0.3s, opacity 0.3s;
+  z-index: 2;
+
+  &--visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  &--success {
+    border-color: $green-700;
+  }
+
+  &--error {
+    border-color: $red-700;
+  }
+
+  &__btn-close {
+    color: $neutral-700;
+  }
+}

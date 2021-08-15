@@ -1,0 +1,91 @@
+.button {
+  border: 1px solid $blue-700;
+  border-radius: 4px;
+  box-shadow: $box-shadow-00;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s, color 0.2s;
+
+  &--s {
+    font-size: $font-size-00;
+    padding: $space-01 $space-02;
+  }
+  
+  &--m {
+    font-size: $font-size-01;
+    padding: $space-01 $space-04;
+  }
+  
+  &--l {
+    font-size: $font-size-01;
+    padding: $space-02 $space-05;
+  }
+
+  &--primary {
+    background-color: $blue-700;
+    color: $white;
+
+    &:hover {
+      background-color: $blue-600;
+    }
+  }
+
+  &--secondary {
+    background-color: $white;
+    color: $blue-700;
+
+    &:hover {
+      background-color: $neutral-100;
+    }
+  }
+
+  &--danger {
+    background-color: $red-700;
+    border-color: $red-700;
+    color: $white;
+
+    &:hover {
+      background-color: $red-600;
+    }
+  }
+
+  &--inline {
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    color: $blue-700;
+    padding: $space-00;
+
+    &:hover {
+      background-color: transparent;
+      color: $blue-600;
+
+      .button__content {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &--disabled {
+    background-color: $neutral-400;
+    border-color: $neutral-400;
+    box-shadow: none;
+    pointer-events: none;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &__content {
+    line-height: 1;
+  }
+
+  .icon {
+    color: inherit;
+
+    &:only-child {
+      margin: 0;
+    }
+  }
+}

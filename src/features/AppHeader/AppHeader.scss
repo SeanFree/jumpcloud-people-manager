@@ -1,0 +1,21 @@
+.app-header {
+  background-color: $blue-800;
+  box-shadow: $box-shadow-01;
+  padding: $padding-vertical-03;
+
+  @include at-breakpoint("m") {
+    padding: $padding-vertical-04;
+  }
+
+  &__jumpcloud-link {
+    color: $white;
+
+    &:hover {
+      color: $blue-100;
+    }
+  }
+
+  & &__heading {
+    color: $white;
+  }
+}

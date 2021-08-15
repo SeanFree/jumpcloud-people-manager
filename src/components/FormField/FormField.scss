@@ -1,0 +1,17 @@
+.form-field {
+  &__label {
+    font-size: $font-size-00;
+    font-weight: 600;
+
+    &--required:after,
+    &--required-error:after {
+      content: " *";
+      white-space: pre;
+      display: inline-block;
+    }
+    
+    &--required-error:after {
+      color: $red-700;
+    }
+  }
+}

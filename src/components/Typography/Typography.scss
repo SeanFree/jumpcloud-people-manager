@@ -1,0 +1,47 @@
+.typography {
+  margin: 0;
+
+  &--s {
+    font-size: $font-size-00;
+  }
+
+  &--m {
+    font-size: $font-size-01;
+  }
+
+  &--l {
+    font-size: $font-size-02;
+  }
+
+  &--light {
+    font-weight: 200;
+  }
+
+  &--normal {
+    font-weight: 400;
+  }
+
+  &--semibold {
+    font-weight: 600;
+  }
+
+  &--bold {
+    font-weight: 800;
+  }
+
+  &--align-left {
+    text-align: left;
+  }
+
+  &--align-center {
+    text-align: center;
+  }
+
+  &--align-right {
+    text-align: right;
+  }
+
+  &:only-child {
+    margin: 0;
+  }
+}

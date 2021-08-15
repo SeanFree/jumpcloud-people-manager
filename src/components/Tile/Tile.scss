@@ -1,0 +1,43 @@
+.tile {
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: $box-shadow-00;
+  margin: $margin-stack-04;
+
+  @include at-breakpoint("m") {
+    margin: $margin-stack-05;
+  }
+
+  &__header {
+    padding: $space-04 $space-04 $space-01;
+
+    @include at-breakpoint("m") {
+      padding: $space-05 $space-05 $space-02;
+    }
+
+    > *:last-child { 
+      flex-basis: 100%;
+      margin-top: $space-02;
+      margin-left: auto;
+
+      @include at-breakpoint("s") {
+        flex-basis: auto;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__body {
+    padding: 0 $space-04 $space-04;
+    width: 100%;
+
+    @include at-breakpoint("m") {
+      padding: $space-01 $space-05 $space-05;
+    }
+
+    &--full-width {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

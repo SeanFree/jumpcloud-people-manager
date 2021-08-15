@@ -1,0 +1,61 @@
+.data-table {
+  width: 100%;
+
+  &__header {
+    border-bottom: 1px solid $neutral-400;
+  }
+
+  &__heading {
+    padding: $space-00 $space-04;
+
+    @include at-breakpoint("m") {
+      padding: $space-01 $space-05;
+    }
+  }
+
+  &__row {
+    background-color: $neutral-100;
+    border-bottom: 1px solid $neutral-400;
+
+    &:nth-child(2n + 1) {
+      background-color: $white;
+    }
+
+    &--clickable,
+    &--tabbable {
+      position: relative;
+    }
+
+    &--clickable:hover,
+    &--tabbable:focus {
+      background-color: $blue-50; 
+      z-index: 1;
+    }
+
+    &--tabbable:focus {
+      outline-color: $blue-600;
+    }
+
+    &--clickable {
+      position: relative;
+      transition: box-shadow 0.2s, background-color 0.2s;
+  
+      &:hover {
+        box-shadow: $box-shadow-01;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__body {
+    border-bottom: 0;
+  }
+
+  &__cell {
+    padding: $space-02 $space-04;
+
+    @include at-breakpoint("m") {
+      padding: $space-03 $space-05;
+    }
+  }
+}
