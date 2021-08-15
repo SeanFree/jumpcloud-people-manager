@@ -1,0 +1,15 @@
+$breakpointMap: (
+  "s": $breakpoint-1,
+  "m": $breakpoint-2,
+  "l": $breakpoint-3,
+  "xl": $breakpoint-4,
+  "2xl": $breakpoint-5
+);
+
+@mixin at-breakpoint($breakpointSize: "s") {
+  $breakpoint: map-get($breakpointMap, $breakpointSize);
+
+  @media all and (min-width: #{$breakpoint}) {
+    @content;
+  }
+}

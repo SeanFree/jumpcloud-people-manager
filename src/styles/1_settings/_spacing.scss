@@ -1,0 +1,51 @@
+// Base spacing values
+$space-00: 0.125rem; // 2px
+$space-01: 0.25rem;  // 4px
+$space-02: 0.5rem;   // 8px
+$space-03: 0.75rem;  // 12px
+$space-04: 1rem;     // 16px
+$space-05: 1.5rem;   // 24px
+
+
+// Margin
+// Stack Margin -> margin-top
+$margin-stack-00: $space-00 0 0;
+$margin-stack-01: $space-01 0 0;
+$margin-stack-02: $space-02 0 0;
+$margin-stack-03: $space-03 0 0;
+$margin-stack-04: $space-04 0 0;
+$margin-stack-05: $space-05 0 0;
+
+// Inline margin -> margin-right
+$margin-inline-00: 0 $space-00 0 0;
+$margin-inline-01: 0 $space-01 0 0;
+$margin-inline-02: 0 $space-02 0 0;
+$margin-inline-03: 0 $space-03 0 0;
+$margin-inline-04: 0 $space-04 0 0;
+$margin-inline-05: 0 $space-05 0 0;
+
+
+// Padding
+// Horizontal padding -> padding-left & padding-right
+$padding-horizontal-00: 0 $space-00;
+$padding-horizontal-01: 0 $space-01;
+$padding-horizontal-02: 0 $space-02;
+$padding-horizontal-03: 0 $space-03;
+$padding-horizontal-04: 0 $space-04;
+$padding-horizontal-05: 0 $space-05;
+
+// Vertical padding -> padding-top & padding-bottom
+$padding-vertical-00: $space-00 0;
+$padding-vertical-01: $space-01 0;
+$padding-vertical-02: $space-02 0;
+$padding-vertical-03: $space-03 0;
+$padding-vertical-04: $space-04 0;
+$padding-vertical-05: $space-05 0;
+
+// Inset -> all
+$padding-inset-00: $space-00;
+$padding-inset-01: $space-01;
+$padding-inset-02: $space-02;
+$padding-inset-03: $space-03;
+$padding-inset-04: $space-04;
+$padding-inset-05: $space-05;

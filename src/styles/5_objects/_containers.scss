@@ -1,0 +1,11 @@
+.content-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $breakpoint-4;
+  padding: $padding-horizontal-04;
+  width: 100%;
+
+  @include at-breakpoint("m") {
+    padding: $padding-horizontal-05;
+  }
+}
