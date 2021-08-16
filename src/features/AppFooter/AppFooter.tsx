@@ -32,14 +32,19 @@ const footerLinkGroups = [
     heading: 'Design',
     links: [
       {
-        ariaLabel: 'Google Material Icons Documentation',
+        ariaLabel: 'Google Material Design Colors',
+        href: 'https://material.io/design/color/the-color-system.html#color-usage-and-palettes',
+        text: 'Google Material Colors',
+      },
+      {
+        ariaLabel: 'Google Material Icons',
         href: 'https://fonts.google.com/icons',
         text: 'Google Material Icons',
       },
       {
-        ariaLabel: 'Google Material Design Colors Documentation',
-        href: 'https://material.io/design/color/the-color-system.html#color-usage-and-palettes',
-        text: 'Google Material Colors',
+        ariaLabel: 'Google Fonts',
+        href: 'https://fonts.google.com/',
+        text: 'Google Fonts',
       },
     ],
   },

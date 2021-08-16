@@ -132,7 +132,7 @@ const UsersTile: FC = () => {
           className="users-tile__btn-create-user"
           content="Create new user"
           disabled={getUsersStatus === DispatchStatus.PENDING || fetchError}
-          iconName="person_add"
+          iconName="person_add_alt"
           onClick={() => setSidePanelAction('create-user')}
           size="m"
         />

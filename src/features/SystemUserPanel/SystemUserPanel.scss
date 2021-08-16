@@ -1,7 +1,6 @@
 .system-user-panel {
   background-color: $white;
   height: 100vh;
-  padding: $padding-inset-04;
   position: fixed;
   top: 0;
   transform: translateX(100%);
@@ -12,7 +11,6 @@
 
   @include at-breakpoint('m') {
     max-width: $breakpoint-2;
-    padding: $padding-inset-05;
     width: 80vw;
   }
 
@@ -51,11 +49,6 @@
     pointer-events: auto;
   }
 
-  &__form-container {
-    flex: 1;
-    height: 100%;
-  }
-
   .text-input {
     flex-basis: 100%;
     margin-right: 0;
@@ -69,6 +62,32 @@
       @include at-breakpoint('s') {
         margin-right: 0;
       }
+    }
+  }
+
+  &__header,
+  &__content {
+    padding: $padding-inset-04;
+
+    @include at-breakpoint('m') {
+      padding: $padding-inset-05;
+    }
+  }
+
+  &__header {
+    padding-bottom: $space-01;
+
+    @include at-breakpoint('m') {
+      padding-bottom: $space-02;
+    }
+
+  }
+
+  &__content {
+    padding-top: 0;
+
+    @include at-breakpoint('m') {
+      padding-top: $space-01;
     }
   }
 }
