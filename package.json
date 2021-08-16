@@ -46,6 +46,9 @@
       "last 1 safari version"
     ]
   },
+  "engines": {
+    "node": ">=14.15.3"
+  },
   "devDependencies": {
     "@types/react": "^16.14.13",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
