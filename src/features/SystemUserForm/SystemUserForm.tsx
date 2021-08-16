@@ -19,6 +19,8 @@ import UserInformationFields from './UserInformationFields'
 import AddressFields from './AddressFields'
 
 import './SystemUserForm.scss'
+import { useWatchAll } from 'hooks'
+import SystemUser from 'models/SystemUser.interface'
 
 interface SystemUserFormProps {
   handleSubmit: UseFormHandleSubmit<any>
@@ -41,11 +43,14 @@ const SystemUserForm: FC<SystemUserFormProps> = ({
     formState: { dirtyFields, isValid },
   } = useFormContext()
 
-  const email = useWatch({ name: 'email' })
-  const username = useWatch({ name: 'username' })
-  const firstname = useWatch({ name: 'firstname' })
-  const lastname = useWatch({ name: 'lastname' })
-  const displayname = useWatch({ name: 'displayname' })
+  const [displayname, email, firstname, lastname, username] =
+    useWatchAll<SystemUser>([
+      'displayname',
+      'email',
+      'firstname',
+      'lastname',
+      'username',
+    ])
 
   const emailMatch = useAppSelector(selectUserByEmail(email as string))
   const usernameMatch = useAppSelector(selectUserByUsername(username as string))

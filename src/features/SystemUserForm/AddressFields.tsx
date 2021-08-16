@@ -26,7 +26,7 @@ const EMPTY_ADDRESS: Partial<Address> = {
 const AddressFields: FC<AddressFieldsProps> = ({
   disabled = false,
 }: AddressFieldsProps) => {
-  const { control, register } = useFormContext()
+  const { control, register, unregister } = useFormContext()
   const { fields } = useFieldArray({
     control,
     name: 'addresses',
@@ -51,14 +51,16 @@ const AddressFields: FC<AddressFieldsProps> = ({
             </Flexbox>
             <Flexbox columns={2} align="start" as="fieldset" fullWidth gap="m">
               <TextInput<SystemUserPut | SystemUserPost>
-                customFieldProps={register(`addresses.${i}.streetAddress`)}
+                customRegister={register}
+                customUnregister={unregister}
                 disabled={disabled}
                 id={`steetaddress-${i}`}
                 label="Street Address"
                 name={`steetaddress-${i}`}
               />
               <TextInput<SystemUserPut | SystemUserPost>
-                customFieldProps={register(`addresses.${i}.poBox`)}
+                customRegister={register}
+                customUnregister={unregister}
                 disabled={disabled}
                 id={`pobox-${i}`}
                 label="PO Box"
@@ -67,23 +69,26 @@ const AddressFields: FC<AddressFieldsProps> = ({
             </Flexbox>
             <Flexbox align="start" as="fieldset" columns={3} fullWidth gap="m">
               <TextInput
-                customFieldProps={register(`addresses.${i}.locality`)}
+                customRegister={register}
+                customUnregister={unregister}
                 id={`locality-${i}`}
                 label="City"
-                name="locality"
+                name={`locality-${i}`}
               />
               <TextInput<SystemUserPut | SystemUserPost>
-                customFieldProps={register(`addresses.${i}.region`)}
+                customRegister={register}
+                customUnregister={unregister}
                 disabled={disabled}
-                id="state"
-                name="region"
+                id={`state-${i}`}
                 label="State"
+                name={`region-${i}`}
               />
               <TextInput<SystemUserPut | SystemUserPost>
-                customFieldProps={register(`addresses.${i}.postalCode`)}
+                customRegister={register}
+                customUnregister={unregister}
                 disabled={disabled}
-                id="zipcode"
-                name="postalCode"
+                id={`zipcode-${i}`}
+                name={`postalCode-${i}`}
                 label="Zip Code"
                 pattern={zipcodeRegex}
               />
