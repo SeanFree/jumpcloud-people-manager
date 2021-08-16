@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
-import { Button, Flexbox, Heading, TextInput } from 'components'
-import SystemUser from 'models/SystemUser.interface'
+import { Button, Divider, Flexbox, Heading, TextInput } from 'components'
 import SystemUserPut from 'models/SystemUserPut.interface'
 import emailRegex from 'helpers/emailRegex'
 import SystemUserPost from 'models/SystemUserPost.interface'
@@ -90,6 +89,7 @@ const UserInformationFields: FC<UserInformationFieldsProps> = ({
           label="Display Name"
         />
       </Flexbox>
+      <Divider />
     </>
   )
 }

@@ -1,4 +1,5 @@
 export default interface Address {
+  _id: string
   country: string
   extendedAddress: string
   id: string

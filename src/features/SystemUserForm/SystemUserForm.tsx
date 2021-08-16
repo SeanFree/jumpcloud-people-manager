@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useContext } from 'react'
 import { useFormContext, UseFormHandleSubmit, useWatch } from 'react-hook-form'
-import { Button, Divider, Flexbox, Spinner } from 'components'
+import { Button, Flexbox, Spinner } from 'components'
 import { AppContext } from 'features'
 import DispatchStatus from 'models/DispatchStatus.enum'
 import SystemUserPost from 'models/SystemUserPost.interface'
@@ -16,7 +16,7 @@ import {
   selectUserByUsername,
 } from 'store/users/users.selectors'
 import UserInformationFields from './UserInformationFields'
-import PersonalInformationFields from './PersonalInformationFields'
+import AddressFields from './AddressFields'
 
 import './SystemUserForm.scss'
 
@@ -171,12 +171,11 @@ const SystemUserForm: FC<SystemUserFormProps> = ({
           userUnderEdit={userUnderEdit}
           isEditForm={isEditForm}
         />
-        <Divider />
-        <PersonalInformationFields
+        {/* <PersonalInformationFields
           disabled={requestPending}
           userUnderEdit={userUnderEdit}
-        />
-        <Divider />
+        /> */}
+        <AddressFields />
         <Flexbox fullWidth gap="m" justify="end">
           {requestPending && (
             <Spinner className="system-user-form__spinner" size="l" />

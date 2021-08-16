@@ -94,7 +94,7 @@ export const usersSlice = createSlice({
       .addCase($createUser.pending, (state) => {
         state[UserStatusKey.createUser] = DispatchStatus.PENDING
       })
-      .addCase($createUser.rejected, (state, action) => {
+      .addCase($createUser.rejected, (state) => {
         state[UserStatusKey.createUser] = DispatchStatus.FAILED
       })
       .addCase($createUser.fulfilled, (state, action) => {
@@ -106,7 +106,7 @@ export const usersSlice = createSlice({
       .addCase($updateUser.pending, (state) => {
         state[UserStatusKey.updateUser] = DispatchStatus.PENDING
       })
-      .addCase($updateUser.rejected, (state, action) => {
+      .addCase($updateUser.rejected, (state) => {
         state[UserStatusKey.updateUser] = DispatchStatus.FAILED
       })
       .addCase($updateUser.fulfilled, (state, action) => {

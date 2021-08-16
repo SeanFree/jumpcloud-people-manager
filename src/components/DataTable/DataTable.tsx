@@ -97,6 +97,12 @@ const DataTable = <DataSourceType,>({
               onClick={() => handleSort(key)}
             >
               <Flexbox as="span" gap="xs">
+                <Typography
+                  as="span"
+                  content={label}
+                  size="s"
+                  weight="semibold"
+                />
                 {sortBy === key && (
                   <Icon
                     name={
@@ -106,12 +112,6 @@ const DataTable = <DataSourceType,>({
                     }
                   />
                 )}
-                <Typography
-                  as="span"
-                  content={label}
-                  size="s"
-                  weight="semibold"
-                />
               </Flexbox>
             </th>
           ))}

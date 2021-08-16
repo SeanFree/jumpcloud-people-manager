@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { FieldName, Path } from 'react-hook-form'
+import { FieldName, Path, UseFormRegisterReturn } from 'react-hook-form'
 import { FormField } from 'components'
 import { useClassNames } from 'hooks'
 import './TextInput.scss'
@@ -8,6 +8,7 @@ interface TextInputProps {
   ariaLabel?: string
   autoFocus?: boolean
   className?: string
+  customFieldProps?: UseFormRegisterReturn
   defaultValue?: string
   disabled?: boolean
   id: string
@@ -23,6 +24,7 @@ const TextInput = <FormDataType,>({
   ariaLabel,
   autoFocus = false,
   className,
+  customFieldProps,
   defaultValue,
   disabled = false,
   id,
@@ -70,22 +72,25 @@ const TextInput = <FormDataType,>({
       }}
     >
       {(fieldProps, hasError) => (
-        <input
-          {...fieldProps}
-          aria-disabled={disabled}
-          aria-label={ariaLabel || label}
-          aria-required={required}
-          aria-invalid={hasError}
-          autoFocus={autoFocus}
-          className="text-input__input"
-          disabled={disabled}
-          id={id}
-          maxLength={maxLength}
-          minLength={minLength}
-          type="text"
-          required={required}
-          value={defaultValue}
-        />
+        console.log(customFieldProps),
+        (
+          <input
+            aria-disabled={disabled}
+            aria-label={ariaLabel || label}
+            aria-required={required}
+            aria-invalid={hasError}
+            autoFocus={autoFocus}
+            className="text-input__input"
+            disabled={disabled}
+            id={id}
+            maxLength={maxLength}
+            minLength={minLength}
+            type="text"
+            required={required}
+            value={defaultValue}
+            {...(customFieldProps || fieldProps)}
+          />
+        )
       )}
     </FormField>
   )

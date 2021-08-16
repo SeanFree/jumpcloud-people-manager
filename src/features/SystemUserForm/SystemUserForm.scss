@@ -1,4 +1,10 @@
-.system-user-form { 
+.system-user-form {
+  &__heading {
+    &--address {
+      text-transform: capitalize;
+    }
+  }
+
   &__spinner {
     justify-content: flex-end;
   }
