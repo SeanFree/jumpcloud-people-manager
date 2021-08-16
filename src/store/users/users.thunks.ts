@@ -14,7 +14,7 @@ import {
 export const $getAllUsers = createAsyncThunk<SystemUsersList>(
   'users/$getAllUsers',
   async () => {
-    const { data, status } = await getAllUsers()
+    const { data } = await getAllUsers()
 
     return data
   }
@@ -23,7 +23,7 @@ export const $getAllUsers = createAsyncThunk<SystemUsersList>(
 export const $getUserById = createAsyncThunk<SystemUser, string>(
   'users/$getUserById',
   async (userId: string) => {
-    const { data, status } = await getUserById(userId)
+    const { data } = await getUserById(userId)
 
     return data
   }
@@ -32,7 +32,7 @@ export const $getUserById = createAsyncThunk<SystemUser, string>(
 export const $createUser = createAsyncThunk<SystemUser, SystemUserPost>(
   'users/$createUser',
   async (user: SystemUserPost) => {
-    const { data, status } = await createUser(user)
+    const { data } = await createUser(user)
 
     return data
   }
@@ -41,7 +41,14 @@ export const $createUser = createAsyncThunk<SystemUser, SystemUserPost>(
 export const $updateUser = createAsyncThunk<Update<SystemUser>, SystemUserPut>(
   'users/$updateUser',
   async (userUpdate: SystemUserPut) => {
-    const { data, status } = await updateUser(userUpdate)
+    const update: SystemUserPut = Object.entries(userUpdate).reduce(
+      (_update: SystemUserPut, [key, value]) => {
+        if (value) _update[key as keyof SystemUserPut] = value
+        return _update
+      },
+      {}
+    )
+    const { data } = await updateUser(update)
 
     return {
       id: data._id,
@@ -53,7 +60,7 @@ export const $updateUser = createAsyncThunk<Update<SystemUser>, SystemUserPut>(
 export const $deleteUser = createAsyncThunk<string, string>(
   'users/$deleteUser',
   async (userId: string) => {
-    const { data, status } = await deleteUser(userId)
+    await deleteUser(userId)
 
     return userId
   }

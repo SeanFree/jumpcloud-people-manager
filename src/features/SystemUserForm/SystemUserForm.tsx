@@ -16,6 +16,7 @@ import {
   selectUserByUsername,
 } from 'store/users/users.selectors'
 import UserInformationFields from './UserInformationFields'
+import PersonalInformationFields from './PersonalInformationFields'
 
 import './SystemUserForm.scss'
 
@@ -169,6 +170,11 @@ const SystemUserForm: FC<SystemUserFormProps> = ({
           onDelete={onDelete}
           userUnderEdit={userUnderEdit}
           isEditForm={isEditForm}
+        />
+        <Divider />
+        <PersonalInformationFields
+          disabled={disableInput}
+          userUnderEdit={userUnderEdit}
         />
         <Divider />
         <Flexbox fullWidth gap="m" justify="end">

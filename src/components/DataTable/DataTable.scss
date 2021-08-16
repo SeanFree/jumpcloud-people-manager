@@ -6,6 +6,7 @@
   }
 
   &__heading {
+    cursor: pointer;
     padding: $space-00 $space-04;
 
     @include at-breakpoint('m') {

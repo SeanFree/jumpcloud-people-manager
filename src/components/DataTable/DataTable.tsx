@@ -1,8 +1,20 @@
-import React, { ReactNode, ReactElement, SyntheticEvent } from 'react'
+import React, {
+  ReactNode,
+  ReactElement,
+  SyntheticEvent,
+  useState,
+  useEffect,
+} from 'react'
 import { Flexbox, Typography } from 'components'
 import { useClassNames } from 'hooks'
 import { ValueOf } from 'helpers/ValueOf'
 import './DataTable.scss'
+import Icon from 'components/Icon/Icon'
+
+enum ColumnSortDirection {
+  ascending = 1,
+  descending = -1,
+}
 
 export interface DataTableColumn<DataSourceType> {
   icon?: ReactElement | ((value: ValueOf<DataSourceType>) => ReactElement)
@@ -27,6 +39,12 @@ interface DataTableProps<DataSourceType> {
   ) => ReactNode
 }
 
+const sortItems = (
+  items: any[],
+  key: string,
+  direction: ColumnSortDirection
+) => [...items.sort((a, b) => a[key].localeCompare(b[key]) * direction)]
+
 const DataTable = <DataSourceType,>({
   className,
   columns,
@@ -36,6 +54,13 @@ const DataTable = <DataSourceType,>({
   onRowKeyDown,
   renderCell,
 }: DataTableProps<DataSourceType>): ReactElement => {
+  const [sortBy, setSortBy] = useState(columns[0].key)
+  const [sortDirection, setSortDirection] = useState(
+    ColumnSortDirection.ascending
+  )
+  const [sortedData, setSortedData] = useState<any[]>(
+    sortItems(data, sortBy as string, sortDirection)
+  )
   const classNames = useClassNames({
     [className as string]: !!className,
     'data-table': true,
@@ -46,22 +71,57 @@ const DataTable = <DataSourceType,>({
     'data-table__row--tabbable': !!onRowKeyDown,
   })
 
+  const handleSort = (key: keyof DataSourceType) => {
+    setSortDirection(
+      key !== sortBy
+        ? ColumnSortDirection.ascending
+        : sortDirection === ColumnSortDirection.ascending
+        ? ColumnSortDirection.descending
+        : ColumnSortDirection.ascending
+    )
+    setSortBy(key)
+  }
+
+  useEffect(() => {
+    setSortedData(sortItems(data, sortBy as string, sortDirection))
+  }, [sortBy, sortDirection])
+
+  useEffect(() => {
+    setSortBy(columns[0].key)
+    setSortDirection(ColumnSortDirection.ascending)
+  }, [data])
+
   return (
     <table className={classNames} id={id}>
       <tbody className="data-table__body">
         <tr className="data-table__header">
-          {columns.map(({ label }, i) => (
-            <th className="data-table__heading" key={i}>
-              <Typography
-                as="span"
-                content={label}
-                size="s"
-                weight="semibold"
-              />
+          {columns.map(({ key, label }, i) => (
+            <th
+              className="data-table__heading"
+              key={i}
+              onClick={() => handleSort(key)}
+            >
+              <Flexbox as="span" gap="xs">
+                {sortBy === key && (
+                  <Icon
+                    name={
+                      sortDirection === ColumnSortDirection.ascending
+                        ? 'expand_less'
+                        : 'expand_more'
+                    }
+                  />
+                )}
+                <Typography
+                  as="span"
+                  content={label}
+                  size="s"
+                  weight="semibold"
+                />
+              </Flexbox>
             </th>
           ))}
         </tr>
-        {data.map((rowItem, i) => (
+        {sortedData.map((rowItem, i) => (
           <tr
             className={rowClassNames}
             key={i}

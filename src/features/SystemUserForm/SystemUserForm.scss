@@ -1,0 +1,17 @@
+.system-user-form {
+  .text-input {
+    flex-basis: 100%;
+    margin-right: 0;
+    max-width: unset;
+
+    @include at-breakpoint('s') {
+      margin-right: $space-04;
+    }
+
+    &:last-child {
+      @include at-breakpoint('s') {
+        margin-right: 0;
+      }
+    }
+  }
+}

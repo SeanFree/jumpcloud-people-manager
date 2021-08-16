@@ -3,6 +3,7 @@ import { Button, Flexbox, Heading, TextInput } from 'components'
 import SystemUser from 'models/SystemUser.interface'
 import SystemUserPut from 'models/SystemUserPut.interface'
 import emailRegex from 'helpers/emailRegex'
+import SystemUserPost from 'models/SystemUserPost.interface'
 
 interface UserInformationFieldsProps {
   disabled: boolean
@@ -45,20 +46,20 @@ const UserInformationFields: FC<UserInformationFieldsProps> = ({
         )}
       </Flexbox>
       <Flexbox align="start" as="fieldset" fullWidth gap="m">
-        <TextInput<SystemUser>
+        <TextInput<SystemUserPut | SystemUserPost>
           autoFocus
           disabled={disabled}
           id="firstname"
           name="firstname"
           label="First Name"
         />
-        <TextInput<SystemUser>
+        <TextInput<SystemUserPut | SystemUserPost>
           disabled={disabled}
           id="firstname"
           name="middlename"
           label="Middle Name"
         />
-        <TextInput<SystemUser>
+        <TextInput<SystemUserPut | SystemUserPost>
           disabled={disabled}
           id="lastname"
           name="lastname"
@@ -66,7 +67,7 @@ const UserInformationFields: FC<UserInformationFieldsProps> = ({
         />
       </Flexbox>
       <Flexbox align="start" as="fieldset" fullWidth gap="m">
-        <TextInput<SystemUser>
+        <TextInput<SystemUserPut | SystemUserPost>
           disabled={disabled}
           id="username"
           name="username"
@@ -74,7 +75,7 @@ const UserInformationFields: FC<UserInformationFieldsProps> = ({
           minLength={3}
           required
         />
-        <TextInput<SystemUser>
+        <TextInput<SystemUserPut | SystemUserPost>
           disabled={disabled}
           id="email"
           name="email"
@@ -82,7 +83,7 @@ const UserInformationFields: FC<UserInformationFieldsProps> = ({
           pattern={emailRegex}
           required
         />
-        <TextInput<SystemUser>
+        <TextInput<SystemUserPut | SystemUserPost>
           disabled={disabled}
           id="displayname"
           name="displayname"

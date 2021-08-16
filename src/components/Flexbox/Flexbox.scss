@@ -5,6 +5,12 @@
     width: 100%;
   }
 
+  @for $i from 1 through 12 {
+    &--col-#{$i} {
+      flex-basis: calc($i / 100%);
+    }
+  }
+
   &--row {
     flex-direction: row;
     flex-wrap: wrap;

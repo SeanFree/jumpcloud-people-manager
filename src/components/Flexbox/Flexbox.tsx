@@ -6,6 +6,7 @@ interface FlexboxProps {
   align?: 'baseline' | 'center' | 'end' | 'start' | 'stretch'
   as?: ElementType
   className?: string
+  columns?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
   direction?: 'column' | 'row'
   fullWidth?: boolean
   gap?: 'xs' | 's' | 'm' | 'l'
@@ -18,6 +19,7 @@ const Flexbox: FC<FlexboxProps> = ({
   as: Tag = 'span',
   children,
   className,
+  columns = 1,
   direction = 'row',
   fullWidth = false,
   nowrap = false,
@@ -28,6 +30,7 @@ const Flexbox: FC<FlexboxProps> = ({
     [className as string]: !!className,
     flexbox: true,
     [`flexbox--align-${align}`]: true,
+    [`flexbox--col-${columns}`]: !!columns,
     [`flexbox--${direction}`]: true,
     'flexbox--full-width': fullWidth,
     [`flexbox--gap-${gap}`]: !!gap,

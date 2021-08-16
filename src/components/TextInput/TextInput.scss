@@ -4,24 +4,4 @@
   @include at-breakpoint('m') {
     max-width: 220px;
   }
-
-  &__input {
-    border: 1px solid $neutral-500;
-    border-radius: 4px;
-    padding: $space-01 $space-02;
-    width: 100%;
-
-    &:focus {
-      outline-color: $blue-600;
-      outline-width: 2px;
-    }
-
-    &[aria-invalid='true'] {
-      border-color: $red-700;
-    }
-
-    &:disabled {
-      cursor: not-allowed;
-    }
-  }
 }
