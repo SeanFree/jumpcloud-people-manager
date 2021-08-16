@@ -1,4 +1,9 @@
 .users-tile {
+  &__spinner {
+    padding-bottom: $space-05;
+    padding-top: $space-05;
+  }
+
   &__error {
     padding: $padding-vertical-05;
   }

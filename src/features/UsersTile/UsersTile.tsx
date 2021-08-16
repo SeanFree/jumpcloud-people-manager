@@ -1,5 +1,13 @@
 import React, { FC, useContext, useEffect, useState } from 'react'
-import { Button, DataTable, Flexbox, Icon, Tile, Typography } from 'components'
+import {
+  Button,
+  DataTable,
+  Flexbox,
+  Icon,
+  Spinner,
+  Tile,
+  Typography,
+} from 'components'
 import { DataTableColumn } from 'components/DataTable/DataTable'
 import SystemUser from 'models/SystemUser.interface'
 import SystemUsersList from 'models/SystemUsersList.interface'
@@ -78,7 +86,9 @@ const UsersTile: FC = () => {
     <Tile
       className="users-tile"
       bodyContent={
-        fetchError ? (
+        getUsersStatus === DispatchStatus.PENDING ? (
+          <Spinner className="users-tile__spinner" />
+        ) : fetchError ? (
           <Flexbox
             as="div"
             className="users-tile__error"

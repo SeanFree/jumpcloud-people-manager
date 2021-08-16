@@ -1,0 +1,11 @@
+.spinner {
+  &__icon {
+    animation: spin 2s infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
