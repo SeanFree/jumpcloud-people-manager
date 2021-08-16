@@ -14,40 +14,28 @@ import { omitEmpty } from 'utils'
 
 export const $getAllUsers = createAsyncThunk<SystemUsersList>(
   'users/$getAllUsers',
-  async () => {
-    const { data } = await getAllUsers()
-
-    return data
-  }
+  getAllUsers
 )
 
 export const $getUserById = createAsyncThunk<SystemUser, string>(
   'users/$getUserById',
-  async (userId: string) => {
-    const { data } = await getUserById(userId)
-
-    return data
-  }
+  getUserById
 )
 
 export const $createUser = createAsyncThunk<SystemUser, SystemUserPost>(
   'users/$createUser',
-  async (user: SystemUserPost) => {
-    const { data } = await createUser(user)
-
-    return data
-  }
+  createUser
 )
 
 export const $updateUser = createAsyncThunk<Update<SystemUser>, SystemUserPut>(
   'users/$updateUser',
   async (userUpdate: SystemUserPut) => {
-    const update = omitEmpty<SystemUserPut>(userUpdate)
-    const { data } = await updateUser(update)
+    const changes = omitEmpty<SystemUserPut>(userUpdate)
+    const { id } = await updateUser(changes)
 
     return {
-      id: data._id,
-      changes: userUpdate,
+      id,
+      changes,
     }
   }
 )
