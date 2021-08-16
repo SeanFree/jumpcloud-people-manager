@@ -11,6 +11,8 @@ const AppNotification: FC = () => {
   const dispatch = useAppDispatch()
   const { notificationMessage, setNotificationMessage } = useContext(AppContext)
   const [isVisible, setIsVisible] = useState(false)
+  const [transitionTimeout, setTransitionTimeout] =
+    useState<NodeJS.Timeout | null>(null)
   const el = useRef<HTMLElement>(null)
   const classNames = useClassNames({
     'app-notification--visible': isVisible,
@@ -33,15 +35,19 @@ const AppNotification: FC = () => {
       setIsVisible(false)
       handleTransition()
     } else {
-      setTimeout(() => {
-        setIsVisible(false)
-        handleTransition()
-      }, 3000)
+      setTransitionTimeout(
+        setTimeout(() => {
+          setIsVisible(false)
+          handleTransition()
+        }, 3000)
+      )
     }
   }
 
   useEffect(() => {
     if (notificationMessage) {
+      transitionTimeout && clearTimeout(transitionTimeout)
+
       dispatch(
         clearStatusByKey(notificationMessage?.statusKey as UserStatusKey)
       )
