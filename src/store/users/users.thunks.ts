@@ -10,6 +10,7 @@ import {
   getAllUsers,
   updateUser,
 } from 'services/users.service'
+import { omitEmpty } from 'utils'
 
 export const $getAllUsers = createAsyncThunk<SystemUsersList>(
   'users/$getAllUsers',
@@ -41,13 +42,7 @@ export const $createUser = createAsyncThunk<SystemUser, SystemUserPost>(
 export const $updateUser = createAsyncThunk<Update<SystemUser>, SystemUserPut>(
   'users/$updateUser',
   async (userUpdate: SystemUserPut) => {
-    const update: SystemUserPut = Object.entries(userUpdate).reduce(
-      (_update: SystemUserPut, [key, value]) => {
-        if (value) _update[key as keyof SystemUserPut] = value
-        return _update
-      },
-      {}
-    )
+    const update = omitEmpty<SystemUserPut>(userUpdate)
     const { data } = await updateUser(update)
 
     return {

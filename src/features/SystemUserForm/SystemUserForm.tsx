@@ -171,10 +171,6 @@ const SystemUserForm: FC<SystemUserFormProps> = ({
           userUnderEdit={userUnderEdit}
           isEditForm={isEditForm}
         />
-        {/* <PersonalInformationFields
-          disabled={requestPending}
-          userUnderEdit={userUnderEdit}
-        /> */}
         <AddressFields />
         <Flexbox fullWidth gap="m" justify="end">
           {requestPending && (

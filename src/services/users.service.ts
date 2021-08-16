@@ -5,6 +5,8 @@ import SystemUsersList from 'models/SystemUsersList.interface'
 import SystemUserPost from 'models/SystemUserPost.interface'
 import SystemUserPut from 'models/SystemUserPut.interface'
 
+// Note: error handling deferred to reducers
+
 export const getAllUsers = async (): Promise<
   AxiosResponse<SystemUsersList>
 > => {

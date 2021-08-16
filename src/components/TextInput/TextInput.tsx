@@ -72,25 +72,22 @@ const TextInput = <FormDataType,>({
       }}
     >
       {(fieldProps, hasError) => (
-        console.log(customFieldProps),
-        (
-          <input
-            aria-disabled={disabled}
-            aria-label={ariaLabel || label}
-            aria-required={required}
-            aria-invalid={hasError}
-            autoFocus={autoFocus}
-            className="text-input__input"
-            disabled={disabled}
-            id={id}
-            maxLength={maxLength}
-            minLength={minLength}
-            type="text"
-            required={required}
-            value={defaultValue}
-            {...(customFieldProps || fieldProps)}
-          />
-        )
+        <input
+          aria-disabled={disabled}
+          aria-label={ariaLabel || label}
+          aria-required={required}
+          aria-invalid={hasError}
+          autoFocus={autoFocus}
+          className="text-input__input"
+          disabled={disabled}
+          id={id}
+          maxLength={maxLength}
+          minLength={minLength}
+          type="text"
+          required={required}
+          value={defaultValue}
+          {...(customFieldProps || fieldProps)}
+        />
       )}
     </FormField>
   )
