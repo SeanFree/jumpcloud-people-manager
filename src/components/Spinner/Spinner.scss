@@ -1,6 +1,6 @@
 .spinner {
   &__icon {
-    animation: spin 2s infinite;
+    animation: spin 2s linear infinite;
   }
 
   @keyframes spin {

@@ -1,4 +1,8 @@
-.system-user-form {
+.system-user-form { 
+  &__spinner {
+    justify-content: flex-end;
+  }
+
   .text-input {
     flex-basis: 100%;
     margin-right: 0;

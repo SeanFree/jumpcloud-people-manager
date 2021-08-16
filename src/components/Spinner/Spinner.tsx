@@ -5,9 +5,13 @@ import './Spinner.scss'
 
 interface SpinnerProps {
   className?: string
+  size?: 's' | 'm' | 'l' | 'xl'
 }
 
-const Spinner: FC<SpinnerProps> = ({ className }: SpinnerProps) => {
+const Spinner: FC<SpinnerProps> = ({
+  className,
+  size = 'xl',
+}: SpinnerProps) => {
   const classNames = useClassNames({
     [className as string]: !!className,
     spinner: true,
@@ -15,7 +19,7 @@ const Spinner: FC<SpinnerProps> = ({ className }: SpinnerProps) => {
 
   return (
     <Flexbox as="span" className={classNames} fullWidth justify="center">
-      <Icon name="rotate_right" className="spinner__icon" size="xl" />
+      <Icon name="rotate_right" className="spinner__icon" size={size} />
     </Flexbox>
   )
 }

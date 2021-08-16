@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useContext } from 'react'
 import { useFormContext, UseFormHandleSubmit, useWatch } from 'react-hook-form'
-import { Button, Divider, Flexbox } from 'components'
+import { Button, Divider, Flexbox, Spinner } from 'components'
 import { AppContext } from 'features'
 import DispatchStatus from 'models/DispatchStatus.enum'
 import SystemUserPost from 'models/SystemUserPost.interface'
@@ -54,13 +54,13 @@ const SystemUserForm: FC<SystemUserFormProps> = ({
   const deleteUserStatus = useAppSelector(selectDeleteUserStatus)
 
   const isEditForm = !!userUnderEdit
-  const disableInput =
+  const requestPending =
     createUserStatus === DispatchStatus.PENDING ||
     updateUserStatus === DispatchStatus.PENDING ||
     deleteUserStatus === DispatchStatus.PENDING
 
   const submitDisabled =
-    disableInput ||
+    requestPending ||
     (isEditForm
       ? !isValid || !Object.keys(dirtyFields).length
       : !isValid || !!usernameMatch || !!emailMatch)
@@ -166,21 +166,24 @@ const SystemUserForm: FC<SystemUserFormProps> = ({
     >
       <Flexbox align="start" as="section" direction="column" gap="l">
         <UserInformationFields
-          disabled={disableInput}
+          disabled={requestPending}
           onDelete={onDelete}
           userUnderEdit={userUnderEdit}
           isEditForm={isEditForm}
         />
         <Divider />
         <PersonalInformationFields
-          disabled={disableInput}
+          disabled={requestPending}
           userUnderEdit={userUnderEdit}
         />
         <Divider />
         <Flexbox fullWidth gap="m" justify="end">
+          {requestPending && (
+            <Spinner className="system-user-form__spinner" size="l" />
+          )}
           <Button
             ariaLabel="Cancel create new user"
-            disabled={disableInput}
+            disabled={requestPending}
             content="Cancel"
             iconName="cancel"
             onClick={onCancel}

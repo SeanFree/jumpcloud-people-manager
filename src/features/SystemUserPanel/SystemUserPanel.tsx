@@ -62,17 +62,17 @@ const SystemUserPanel: FC = () => {
               <Flexbox
                 as="div"
                 className="system-user-panel__status content-wrapper"
-                gap="m"
+                gap="s"
               >
                 <Icon
                   name={
                     userUnderEdit?.state === UserState.ACTIVATED
-                      ? 'person_add'
-                      : 'person_off'
+                      ? 'check_circle'
+                      : 'error'
                   }
                   type={
                     userUnderEdit?.state === UserState.ACTIVATED
-                      ? 'neutral'
+                      ? 'positive'
                       : 'warning'
                   }
                 />
