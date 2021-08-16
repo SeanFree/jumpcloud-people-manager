@@ -84,12 +84,7 @@ const DataTable = <DataSourceType,>({
 
   useEffect(() => {
     setSortedData(sortItems(data, sortBy as string, sortDirection))
-  }, [sortBy, sortDirection])
-
-  useEffect(() => {
-    setSortBy(columns[0].key)
-    setSortDirection(ColumnSortDirection.ascending)
-  }, [data])
+  }, [data, sortBy, sortDirection])
 
   return (
     <table className={classNames} id={id}>
