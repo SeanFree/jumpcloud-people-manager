@@ -11,20 +11,50 @@ const footerLinkGroups = [
         href: 'https://docs.jumpcloud.com/1.0/systemusers/update-a-system-user',
         text: 'Jumpcloud System Users API',
       },
+      {
+        ariaLabel: 'ITCSS Homepage',
+        href: 'https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/',
+        text: 'ITCSS',
+      },
+      {
+        ariaLabel: 'BEM Homepage',
+        href: 'http://getbem.com/',
+        text: 'BEM',
+      },
     ],
   },
   {
     heading: 'Tools',
     links: [
       {
-        ariaLabel: 'React Hook Form Documentation',
+        ariaLabel: 'Typescript Homepage',
+        href: 'https://www.typescriptlang.org/',
+        text: 'TypeScript',
+      },
+      {
+        ariaLabel: 'React Homepage',
+        href: 'https://reactjs.org/',
+        text: 'React',
+      },
+      {
+        ariaLabel: 'Redux Homepage',
+        href: 'https://redux.js.org/',
+        text: 'Redux',
+      },
+      {
+        ariaLabel: 'Redux toolkit Homepage',
+        href: 'https://redux-toolkit.js.org/',
+        text: 'Redux Toolkit',
+      },
+      {
+        ariaLabel: 'React Hook Form Homepage',
         href: 'https://react-hook-form.com/',
         text: 'React Hook Form',
       },
       {
-        ariaLabel: 'Redux toolkit Documentation',
-        href: 'https://redux-toolkit.js.org/',
-        text: 'Redux Toolkit',
+        ariaLabel: 'Axios Homepage',
+        href: 'https://axios-http.com/',
+        text: 'Axios',
       },
     ],
   },

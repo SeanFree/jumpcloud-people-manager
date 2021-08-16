@@ -7,7 +7,9 @@
 
   @for $i from 1 through 12 {
     &--col-#{$i} {
-      flex-basis: calc($i / 100%);
+      > * {
+        flex-basis: calc(100% / #{$i});
+      }
     }
   }
 

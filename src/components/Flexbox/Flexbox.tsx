@@ -19,7 +19,7 @@ const Flexbox: FC<FlexboxProps> = ({
   as: Tag = 'span',
   children,
   className,
-  columns = 1,
+  columns,
   direction = 'row',
   fullWidth = false,
   nowrap = false,

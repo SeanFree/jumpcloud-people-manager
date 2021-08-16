@@ -94,7 +94,7 @@ const SystemUserPanel: FC = () => {
                   onClick={() => {
                     dispatch(
                       $updateUser({
-                        _id: userUnderEdit?._id,
+                        ...userUnderEdit,
                         state:
                           userUnderEdit?.state === UserState.ACTIVATED
                             ? UserState.SUSPENDED

@@ -1,6 +1,16 @@
 .heading {
   color: $neutral-800;
   font-weight: 600;
+  margin-bottom: 0;
+  margin: $margin-stack-03;
+
+  @include at-breakpoint('m') {
+    margin: $margin-stack-04;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
 
   &--h1 {
     font-size: $font-size-04;

@@ -72,7 +72,7 @@ const AppNotification: FC = () => {
               notificationMessage.type === 'success' ? 'positive' : 'negative'
             }
           />
-          <Flexbox align="start" as="div" direction="column" gap="xs">
+          <Flexbox align="start" as="div" direction="column">
             <Heading
               as="h5"
               content={
