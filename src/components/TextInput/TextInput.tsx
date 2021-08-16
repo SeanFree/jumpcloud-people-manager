@@ -61,8 +61,10 @@ const TextInput = <FormDataType,>({
         },
         ...(pattern
           ? {
-              message: `Value entered for ${label} is invalid`,
-              value: pattern,
+              pattern: {
+                message: `Value entered for ${label} is invalid`,
+                value: pattern,
+              },
             }
           : {}),
       }}

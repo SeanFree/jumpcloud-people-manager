@@ -15,9 +15,9 @@ import {
   selectUserByEmail,
   selectUserByUsername,
 } from 'store/users/users.selectors'
+import UserInformationFields from './UserInformationFields'
 
 import './SystemUserForm.scss'
-import UserInformationFields from './UserInformationFields'
 
 interface SystemUserFormProps {
   handleSubmit: UseFormHandleSubmit<any>

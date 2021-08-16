@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { Button, Flexbox, Heading, TextInput } from 'components'
 import SystemUser from 'models/SystemUser.interface'
 import SystemUserPut from 'models/SystemUserPut.interface'
+import emailRegex from 'helpers/emailRegex'
 
 interface UserInformationFieldsProps {
   disabled: boolean
@@ -70,6 +71,7 @@ const UserInformationFields: FC<UserInformationFieldsProps> = ({
           id="username"
           name="username"
           label="Username"
+          minLength={3}
           required
         />
         <TextInput<SystemUser>
@@ -77,6 +79,7 @@ const UserInformationFields: FC<UserInformationFieldsProps> = ({
           id="email"
           name="email"
           label="Email Address"
+          pattern={emailRegex}
           required
         />
         <TextInput<SystemUser>
