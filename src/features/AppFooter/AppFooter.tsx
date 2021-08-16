@@ -109,7 +109,7 @@ const AppFooter: FC = () => {
                     rel="noreferrer"
                     target="_blank"
                   >
-                    <Typography content={text} size="s" />
+                    <Typography as="span" content={text} size="s" />
                   </a>
                 </li>
               ))}
