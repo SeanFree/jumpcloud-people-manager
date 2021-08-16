@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, ReactNode, useEffect } from 'react'
+import React, { FC, PropsWithChildren, ReactNode } from 'react'
 import {
   Path,
   ValidationRule,
@@ -6,7 +6,6 @@ import {
   UseFormRegisterReturn,
   UseFormRegister,
   FieldValues,
-  UseFormUnregister,
 } from 'react-hook-form'
 import { ErrorMessage, Flexbox } from 'components'
 import { useClassNames } from 'hooks'
@@ -16,7 +15,6 @@ interface FormFieldProps {
   children: (fieldProps: UseFormRegisterReturn, hasError: boolean) => ReactNode
   className?: string
   customRegister?: UseFormRegister<FieldValues>
-  customUnregister?: UseFormUnregister<FieldValues>
   id: string
   label: string
   name: Path<any>
@@ -28,7 +26,6 @@ const FormField: FC<FormFieldProps> = ({
   children,
   className,
   customRegister,
-  customUnregister,
   id,
   label,
   name,
@@ -38,7 +35,6 @@ const FormField: FC<FormFieldProps> = ({
   const {
     formState: { errors },
     register,
-    unregister,
   } = useFormContext()
   const errorMessage = errors[name]?.message
   const classNames = useClassNames({
@@ -52,12 +48,6 @@ const FormField: FC<FormFieldProps> = ({
       !!errorMessage && errorMessage.includes('required'),
   })
   const _register = (customRegister || register) as UseFormRegister<FieldValues>
-  const _unregister = (customUnregister ||
-    unregister) as UseFormUnregister<FieldValues>
-
-  useEffect(() => {
-    return () => _unregister(name as `${string}`)
-  }, [name, unregister])
 
   return (
     <Flexbox className={classNames} direction="column" gap="s" align="start">

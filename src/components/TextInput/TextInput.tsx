@@ -1,11 +1,5 @@
 import React, { ReactElement } from 'react'
-import {
-  FieldName,
-  FieldValues,
-  Path,
-  UseFormRegister,
-  UseFormUnregister,
-} from 'react-hook-form'
+import { FieldName, FieldValues, Path, UseFormRegister } from 'react-hook-form'
 import { FormField } from 'components'
 import { useClassNames } from 'hooks'
 import './TextInput.scss'
@@ -15,7 +9,6 @@ interface TextInputProps {
   autoFocus?: boolean
   className?: string
   customRegister?: UseFormRegister<FieldValues>
-  customUnregister?: UseFormUnregister<FieldValues>
   defaultValue?: string
   disabled?: boolean
   id: string
@@ -32,7 +25,6 @@ const TextInput = <FormDataType,>({
   autoFocus = false,
   className,
   customRegister,
-  customUnregister,
   defaultValue,
   disabled = false,
   id,
@@ -53,7 +45,6 @@ const TextInput = <FormDataType,>({
     <FormField
       className={classNames}
       customRegister={customRegister}
-      customUnregister={customUnregister}
       id={id}
       label={label}
       name={name as Path<FormDataType>}

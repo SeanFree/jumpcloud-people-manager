@@ -49,46 +49,41 @@ const AddressFields: FC<AddressFieldsProps> = ({
                 content={`${field.type || ''} Address`.trim()}
               />
             </Flexbox>
-            <Flexbox columns={2} align="start" as="fieldset" fullWidth gap="m">
+            <Flexbox align="start" as="fieldset" columns={2} fullWidth gap="m">
               <TextInput<SystemUserPut | SystemUserPost>
                 customRegister={register}
-                customUnregister={unregister}
                 disabled={disabled}
                 id={`steetaddress-${i}`}
                 label="Street Address"
-                name={`steetaddress-${i}`}
+                name={`addresses.${i}.streetAddress`}
               />
               <TextInput<SystemUserPut | SystemUserPost>
                 customRegister={register}
-                customUnregister={unregister}
                 disabled={disabled}
                 id={`pobox-${i}`}
                 label="PO Box"
-                name={`poBox-${i}`}
+                name={`addresses.${i}.poBox`}
               />
             </Flexbox>
             <Flexbox align="start" as="fieldset" columns={3} fullWidth gap="m">
               <TextInput
                 customRegister={register}
-                customUnregister={unregister}
                 id={`locality-${i}`}
                 label="City"
-                name={`locality-${i}`}
+                name={`addresses.${i}.locality`}
               />
               <TextInput<SystemUserPut | SystemUserPost>
                 customRegister={register}
-                customUnregister={unregister}
                 disabled={disabled}
-                id={`state-${i}`}
+                id={`state.${i}`}
                 label="State"
-                name={`region-${i}`}
+                name={`addresses.${i}.region`}
               />
               <TextInput<SystemUserPut | SystemUserPost>
                 customRegister={register}
-                customUnregister={unregister}
                 disabled={disabled}
                 id={`zipcode-${i}`}
-                name={`postalCode-${i}`}
+                name={`addresses.${i}.postalCode`}
                 label="Zip Code"
                 pattern={zipcodeRegex}
               />

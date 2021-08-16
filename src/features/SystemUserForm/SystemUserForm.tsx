@@ -41,6 +41,7 @@ const SystemUserForm: FC<SystemUserFormProps> = ({
     setError,
     setValue,
     formState: { dirtyFields, isValid },
+    reset,
   } = useFormContext()
 
   const [displayname, email, firstname, lastname, username] =
@@ -78,7 +79,13 @@ const SystemUserForm: FC<SystemUserFormProps> = ({
 
   const onDelete = () => dispatch($deleteUser(userUnderEdit?._id as string))
 
-  const onCancel = () => setSidePanelAction('')
+  const onCancel = () => {
+    setSidePanelAction('')
+  }
+
+  useEffect(() => {
+    return () => reset({})
+  }, [])
 
   useEffect(() => {
     if (
