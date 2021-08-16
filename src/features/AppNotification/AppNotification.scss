@@ -1,14 +1,17 @@
 .app-notification {
+  $right-offset: $space-05;
+
   background-color: $white;
   box-shadow: $box-shadow-01;
   border-radius: 0 0 4px 4px;
   border-top: 2px solid;
-  right: $space-04;
+  right: $right-offset;
   padding: $space-04 $space-05;
   opacity: 0;
+  max-width: calc(100vw - 2 * #{$right-offset});
   position: fixed;
-  top: 12vh;
-  transform: translateX(calc(100% + #{$space-04}));
+  top: 4 * $space-05;
+  transform: translateX(calc(100% + #{$right-offset}));
   transition: transform 0.3s, opacity 0.3s;
   z-index: 2;
 
@@ -23,6 +26,10 @@
 
   &--error {
     border-color: $red-700;
+  }
+
+  &__icon {
+    align-self: start;
   }
 
   &__btn-close {

@@ -59,8 +59,9 @@ const AppNotification: FC = () => {
   return (
     <aside aria-live="polite" className={classNames} role="alert" ref={el}>
       {notificationMessage && (
-        <Flexbox as="span" gap="l" fullWidth>
+        <Flexbox as="span" gap="l" fullWidth nowrap>
           <Icon
+            className="app-notification__icon"
             size="l"
             name={
               notificationMessage.type === 'success'
