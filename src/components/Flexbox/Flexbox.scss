@@ -8,7 +8,11 @@
   @for $i from 1 through 12 {
     &--col-#{$i} {
       > * {
-        flex-basis: calc(100% / #{$i});
+        flex-basis: 100%;
+
+        @include at-breakpoint('m') {
+          flex-basis: calc(100% / #{$i});
+        }
       }
     }
   }

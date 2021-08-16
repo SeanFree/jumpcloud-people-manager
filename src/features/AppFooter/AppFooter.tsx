@@ -87,6 +87,7 @@ const AppFooter: FC = () => {
         as="div"
         align="start"
         className="app-footer__container content-wrapper"
+        columns={3}
         fullWidth
         gap="l"
       >
